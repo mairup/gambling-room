@@ -28,16 +28,24 @@ session_start();
         </form>
     </main>
     <script>
-    // Add an event listener to the theme toggle button
-    const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.addEventListener('click', function() {
-        // Check if the current color scheme is dark
         let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (document.documentElement.getAttribute('data-theme') === 'dark')
-            isDark = true;
-        // Toggle the color scheme
-        document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    });
+        document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        // Add an event listener to the theme toggle button
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', function () {
+            // Check if the current color scheme is dark
+
+
+            if (document.documentElement.getAttribute('data-theme') === 'dark')
+                isDark = true;
+            else
+                isDark = false;
+            // Toggle the color scheme
+            console.log('====================================');
+            console.log(isDark);
+            console.log('====================================');
+            document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        });
     </script>
 </body>
 
