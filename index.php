@@ -16,18 +16,29 @@ session_start();
 <body>
     <main>
         <form action="room-selection.php" method="post">
-            <article>
+            <article style="position: relative;">
                 <div>
                     <header>
                         <h1>Starting money:</h1>
                     </header>
                     <input type="number" name="money" value="100" required max="100000" min="10">
-                    <footer><button type="submit">Go</button></footer>
+                    <footer><button type="submit">Go</button><button type="button" id="theme-toggle"></button></footer>
                 </div>
             </article>
         </form>
     </main>
-
+    <script>
+    // Add an event listener to the theme toggle button
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', function() {
+        // Check if the current color scheme is dark
+        let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (document.documentElement.getAttribute('data-theme') === 'dark')
+            isDark = true;
+        // Toggle the color scheme
+        document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    });
+    </script>
 </body>
 
 </html>

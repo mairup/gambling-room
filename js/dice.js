@@ -5,7 +5,6 @@ const dieCon = document.getElementById("die-container")
 let dieInputs = []
 
 for (const die of dice) {
-
     const tmp = die.cloneNode(true)
     tmp.style.display = "none"
     dieCon.appendChild(tmp)

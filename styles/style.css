@@ -143,6 +143,8 @@ main {
 
 #dice-box {
   color: var(--contrast);
+  display: flex;
+  flex-flow: row;
 }
 
 #dice-box svg {
@@ -171,6 +173,7 @@ main {
 
 #bet-range {
   width: 140%;
+  max-width: 67vw;
 }
 
 #die-container {
@@ -179,4 +182,14 @@ main {
 
 #die-container svg {
   width: 15%;
+}
+
+#theme-toggle {
+  background-image: url(../img/settings_brightness_FILL0_wght500_GRAD0_opsz48.svg);
+  background-size: contain;
+  height: 2.1rem;
+  position: absolute;
+  right: 0.4rem;
+  top: 0.4rem;
+  width: 1rem;
 }
