@@ -21,7 +21,7 @@ isset($_POST["money"]) && $_SESSION["money"] = $_POST["money"];
             <header>
                 <h1>Gambling room:</h1>
                 <h1><span>
-                        <?php echo $_SESSION["money"]; ?>
+                        <?php echo floor($_SESSION["money"]); ?>
                     </span>
                     <img id="coin-img" src="img/coin.png" alt="-C">
                 </h1>
