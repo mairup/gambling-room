@@ -66,11 +66,14 @@ $_SESSION["money"] = round($_SESSION["money"], 2);
                     <button type="submit" style="width:30%">Play</button>
                     <footer class="game-footer">
                         <h2 class="container-fluid" style="position:relative">
-                            <progress id="progress" value="0" max="200">
-                            </progress>
-                            <div id="bet-bar" style="left:<?php echo isset($_SESSION["numberRange"]) ? $_SESSION["numberRange"] - 0.5 :
+                            <div id="progress-bar">
+                                <progress id="progress" value="0" max="200">
+                                </progress>
+                                <div id="bet-bar" style="left:<?php echo isset($_SESSION["numberRange"]) ? $_SESSION["numberRange"] - 0.5 :
                                    "0;display:none" ?>%">
+                            </div>
                         </div>
+
                     </h2>
                 </footer>
             </article>

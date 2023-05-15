@@ -1,3 +1,11 @@
+html {
+  transition: all 0.2s ease-in-out;
+}
+
+html body main {
+  padding: 0;
+}
+
 form {
   display: flex;
   justify-content: center;
@@ -8,6 +16,7 @@ form {
   width: 40vw;
   max-width: 100vw;
   min-height: fit-content;
+  margin-top: 5vh;
 }
 
 .wrapper header {
@@ -62,21 +71,28 @@ form {
   transform: translateX(-50%);
 }
 
-#bet-bar {
-  border-left: 3px solid var(--contrast);
-  width: 0;
+#progress-bar {
   height: 2rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+}
+
+#bet-bar {
+  background-color: var(--contrast);
+  width: 4px;
+  height: 3rem;
   position: absolute;
   left: 50%;
-  top: 0px;
+  top: 0;
+  overflow: hidden;
 }
 
 #progress {
-  margin-top: 0px;
-  height: 2rem;
+  margin: 0;
+  height: 100%;
   border-radius: 10px;
   transition: all 0.2s ease-in-out;
-  margin-bottom: 0;
 }
 
 #money,

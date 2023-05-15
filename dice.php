@@ -19,7 +19,7 @@ if (!isset($_POST["control-input"])) {
 } else {
     $die1 = 0;
 }
-
+echo $_SESSION["money"];
 if ($_SESSION["money"] < 0) {
     $_SESSION["money"] = $tempMoney;
     $die1 = 0;
