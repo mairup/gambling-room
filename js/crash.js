@@ -5,6 +5,8 @@ numberRange.addEventListener("input", (e) => {
 
 let allowSpin = false
 
+const progressBarParent = document.getElementById("progress-bar")
+
 
 setReward()
 function setReward() {
@@ -26,7 +28,7 @@ document.getElementById("form").addEventListener("submit", (e) => {
     }
 
     if (!allowSpin) {
-        progressBar.style.boxShadow = "0 0 2px 2px var(--del-color)"
+        progressBarParent.style.boxShadow = "0 0 15px -2px var(--del-color)"
         e.preventDefault()
         return
     }
@@ -40,7 +42,7 @@ function animateProgress() {
     progressAnimationTimeout = setTimeout(() => {
         if (progressBar.value / 2 >= bet) {
             moneyDisplay.innerText = money;
-            progressBar.style = "box-shadow:" + progressBar.style.boxShadow + ";--progress-color:green";
+            progressBar.style = "--progress-color:green";
         }
 
         if (progressBar.value / 2 < spin) {
@@ -51,9 +53,9 @@ function animateProgress() {
             progressBar.style = "--progress-color:red;background-color:rgba(255, 0, 0, 0.2)"
             moneyDisplay.innerText = money;
             allowSpin = true
-            progressBar.style.boxShadow = "none"
+            progressBarParent.style.boxShadow = "none"
         }
-        else { allowSpin = true; progressBar.style.boxShadow = "none" }
+        else { allowSpin = true; progressBarParent.style.boxShadow = "none" }
 
     }, progressBar.value / 5)
 }

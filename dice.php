@@ -19,7 +19,6 @@ if (!isset($_POST["control-input"])) {
 } else {
     $die1 = 0;
 }
-echo $_SESSION["money"];
 if ($_SESSION["money"] < 0) {
     $_SESSION["money"] = $tempMoney;
     $die1 = 0;
@@ -221,9 +220,9 @@ if ($_SESSION["money"] < 0) {
                     </div>
                     <div class="grid" id="dice-else-box">
                         <input type="range" name="bet-range" id="bet-range" min="1"
-                            max="<?php echo $_SESSION["money"] ?>" value="1" step="1">
+                            max="<?php echo floor($_SESSION["money"]) ?>" value="1" step="1">
                         <input type="number" name="bet-amount" id="bet-amount" min="1"
-                            max="<?php echo $_SESSION["money"] ?>" value="1">
+                            max="<?php echo floor($_SESSION["money"]) ?>" value="1">
                     </div>
                 </article>
                 <div class="grid">
@@ -245,7 +244,7 @@ if ($_SESSION["money"] < 0) {
 
     <script>
         const moneyDisplay = document.getElementById("money");
-        let money = <?php echo json_encode($_SESSION["money"]); ?>;
+        let money = <?php echo json_encode(floor($_SESSION["money"])); ?>;
         const res = <?php echo json_encode($die1); ?>;
         const bool = <?php echo json_encode($bool); ?>
     </script>

@@ -76,6 +76,7 @@ form {
   overflow: hidden;
   position: relative;
   border-radius: 10px;
+  width: 100%;
 }
 
 #bet-bar {
@@ -93,6 +94,9 @@ form {
   height: 100%;
   border-radius: 10px;
   transition: all 0.2s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 #money,
