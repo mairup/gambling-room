@@ -36,6 +36,7 @@ if ($_SESSION["money"] < 0) {
     <title>Gambling Room</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 
 <body>
