@@ -24,7 +24,18 @@ if ($_SESSION["money"] < 0) {
     $die1 = 0;
 }
 
+if (isset($_POST["bet-amount"])) {
+    if ($_POST["bet-amount"] > $_SESSION["money"]) {
+        $betAmount = $_SESSION["money"];
+    } else
+        $betAmount = $_POST["bet-amount"];
+} else {
+    $betAmount = 10;
+}
+
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -54,9 +65,9 @@ if ($_SESSION["money"] < 0) {
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 530">
                             <defs>
                                 <style>
-                                    .cls-1 {
-                                        fill: rgba(0, 0, 0, 0);
-                                    }
+                                .cls-1 {
+                                    fill: rgba(0, 0, 0, 0);
+                                }
                                 </style>
                             </defs>
                             <g id="Layer_2" data-name="Layer 2">
@@ -75,9 +86,9 @@ if ($_SESSION["money"] < 0) {
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 530">
                             <defs>
                                 <style>
-                                    .cls-1 {
-                                        fill: rgba(0, 0, 0, 0);
-                                    }
+                                .cls-1 {
+                                    fill: rgba(0, 0, 0, 0);
+                                }
                                 </style>
                             </defs>
                             <g id="Layer_2" data-name="Layer 2">
@@ -98,9 +109,9 @@ if ($_SESSION["money"] < 0) {
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 530">
                             <defs>
                                 <style>
-                                    .cls-1 {
-                                        fill: rgba(0, 0, 0, 0);
-                                    }
+                                .cls-1 {
+                                    fill: rgba(0, 0, 0, 0);
+                                }
                                 </style>
                             </defs>
                             <g id="Layer_2" data-name="Layer 2">
@@ -126,9 +137,9 @@ if ($_SESSION["money"] < 0) {
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 530">
                             <defs>
                                 <style>
-                                    .cls-1 {
-                                        fill: rgba(0, 0, 0, 0);
-                                    }
+                                .cls-1 {
+                                    fill: rgba(0, 0, 0, 0);
+                                }
                                 </style>
                             </defs>
                             <g id="Layer_2" data-name="Layer 2">
@@ -156,9 +167,9 @@ if ($_SESSION["money"] < 0) {
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 530">
                             <defs>
                                 <style>
-                                    .cls-1 {
-                                        fill: rgba(0, 0, 0, 0);
-                                    }
+                                .cls-1 {
+                                    fill: rgba(0, 0, 0, 0);
+                                }
                                 </style>
                             </defs>
                             <g id="Layer_2" data-name="Layer 2">
@@ -187,9 +198,9 @@ if ($_SESSION["money"] < 0) {
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 530">
                             <defs>
                                 <style>
-                                    .cls-1 {
-                                        fill: rgba(0, 0, 0, 0);
-                                    }
+                                .cls-1 {
+                                    fill: rgba(0, 0, 0, 0);
+                                }
                                 </style>
                             </defs>
                             <g id="Layer_2" data-name="Layer 2">
@@ -223,7 +234,7 @@ if ($_SESSION["money"] < 0) {
                         <input type="range" name="bet-range" id="bet-range" min="1"
                             max="<?php echo floor($_SESSION["money"]) ?>" value="1" step="1">
                         <input type="number" name="bet-amount" id="bet-amount" min="1"
-                            max="<?php echo floor($_SESSION["money"]) ?>" value="1">
+                            max="<?php echo floor($_SESSION["money"]) ?>" value="<?php echo $betAmount ?>">
                     </div>
                 </article>
                 <div class="grid">
@@ -244,10 +255,10 @@ if ($_SESSION["money"] < 0) {
     </main>
 
     <script>
-        const moneyDisplay = document.getElementById("money");
-        let money = <?php echo json_encode(floor($_SESSION["money"])); ?>;
-        const res = <?php echo json_encode($die1); ?>;
-        const bool = <?php echo json_encode($bool); ?>
+    const moneyDisplay = document.getElementById("money");
+    let money = <?php echo json_encode(floor($_SESSION["money"])); ?>;
+    const res = <?php echo json_encode($die1); ?>;
+    const bool = <?php echo json_encode($bool); ?>
     </script>
     <script src="js/dice.js"></script>
 </body>
