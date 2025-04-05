@@ -59,7 +59,7 @@ if (isset($_POST["bet-amount"])) {
                     <img id="coin-img" src="img/coin.png" alt="-C">
                 </h1>
             </header>
-            <form action="dice.php" method="post" class="room-select-box">
+            <form action="dice.php" method="post" class="room-select-box" id="dice-form">
                 <article>
                     <div class="grid" id="dice-box">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 530">

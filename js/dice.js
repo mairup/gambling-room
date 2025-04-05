@@ -2,6 +2,7 @@ moneyDisplay.innerText = Math.floor(money);
 
 const dice = document.getElementById("dice-box").children
 const dieCon = document.getElementById("die-container")
+const diceForm = document.getElementById("dice-form")
 let dieInputs = []
 
 for (const die of dice) {
@@ -68,7 +69,7 @@ let animationTime = 1000
 const die1 = document.getElementById("die1")
 let prevDie = 0
 function animateDie() {
-    dieCon.scrollIntoView({ behavior: "smooth", });
+    diceForm.scrollIntoView({ behavior: "smooth", });
     setTimeout(() => {
         do {
             dieNum = Math.floor(Math.random() * 6)
